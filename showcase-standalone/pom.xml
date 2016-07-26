@@ -68,6 +68,11 @@
             <version>1.0.11</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.terminus</groupId>
+            <artifactId>mapper</artifactId>
+        </dependency>
+
         <!--Mybatis-->
         <dependency>
             <groupId>org.mybatis</groupId>

@@ -58,6 +58,11 @@
             <artifactId>terminus-common</artifactId>
             <version>${terminus-common.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.terminus</groupId>
+            <artifactId>mapper</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     </dependencyManagement>
