@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created Date : 16/7/19
  * Author : wujianwei
@@ -38,6 +40,28 @@ public class ShopAddresses {
             throw new JsonResponseException(response.getError());
         }
     }
+
+    @RequestMapping(value = "/insert")
+    public Long insert(@RequestParam String shopName,
+                       @RequestParam String detail,
+                       @RequestParam Long shopId){
+        return shopAddressSerivice.insert(shopName, detail, shopId).getResult();
+    }
+
+
+    @RequestMapping(value = "/update")
+    public Boolean update(@RequestParam Long id, @RequestParam String province){
+        ShopAddress shopAddress = new ShopAddress();
+        shopAddress.setId(id);
+        shopAddress.setProvince(province);
+        return shopAddressSerivice.update(shopAddress).getResult();
+    }
+
+    @RequestMapping(value = "/select")
+    public List<ShopAddress> select(@RequestParam String province){
+        return shopAddressSerivice.select(province).getResult();
+    }
+
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(){

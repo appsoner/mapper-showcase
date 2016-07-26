@@ -24,7 +24,7 @@ import java.util.Map;
  */
 
 @Data
-@Table(name = "galaxy_user_shop_addresses")
+@Table(name = "shop_addresses")
 public class ShopAddress implements Serializable {
     private static final long serialVersionUID = 485791797593817519L;
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
